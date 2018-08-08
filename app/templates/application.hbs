@@ -1,5 +1,15 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="ui grid container">
+  <div class="sixteen wide column">
+    <div class="ui secondary menu">
+      {{#link-to 'index' classNames='item'}}
+      Home
+      {{/link-to}}
 
-{{outlet}}
+      {{#link-to 'roulette' classNames='item'}}
+      Roulette
+      {{/link-to}}
+    </div>
+
+    {{outlet}}
+  </div>
+</div>

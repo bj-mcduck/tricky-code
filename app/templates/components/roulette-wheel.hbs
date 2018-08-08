@@ -1,0 +1,11 @@
+<div class="roulettewheel_spinner-wrapper">
+  <div class="roulettewheel_spinner" style={{backgroundStyle}}></div>
+</div>
+
+<button class="roulettewheel_spin" {{action 'spin'}}>Spin</button>
+
+{{#if displayedResult}}
+  <div class="roulettewheel_result">
+    You got <strong>{{displayedResult}}</strong>!!
+  </div>
+{{/if}}

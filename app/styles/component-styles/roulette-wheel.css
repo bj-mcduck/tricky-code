@@ -1,0 +1,54 @@
+$slot-width: 100px;
+
+.roulettewheel {
+  &_spin {
+    display: block;
+    margin: 1rem auto 0;
+    padding: .25rem 2rem;
+    border-radius: $border-radius;
+    border: none;
+    text-transform: uppercase;
+    background: $charcoal;
+    color: $white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  &_spinner {
+    width: 300px;
+    height: $slot-width;
+    background: url('/images/roulette-bg.jpg');
+    transition: all 6s cubic-bezier(0,-0.14,.77,1.03);
+  }
+
+  &_spinner-wrapper {
+    position: relative;
+    width: 310px;
+    margin: auto;
+    padding: 0 4px;
+    border: 1px solid $charcoal;
+    border-radius: $border-radius;
+
+    &:before {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      content: ' ';
+      border-top-color: $charcoal;
+      border-width: 10px;
+    }
+  }
+
+  &_result {
+    margin-top: 4rem;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1em;
+    color: $charcoal;
+  }
+}
