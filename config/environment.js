@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'tricky-code',
+    podModulePrefix: 'tricky-code/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
