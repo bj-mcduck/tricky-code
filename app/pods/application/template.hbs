@@ -1,13 +1,10 @@
 <div class="ui grid container">
   <div class="sixteen wide column">
     <div class="ui secondary menu">
-      {{#link-to 'index' classNames='item'}}
-      Home
+      {{link-to 'Home' 'index' classNames='item'}}
+      {{link-to 'Roulette' 'roulette' classNames='item'}}
       {{/link-to}}
-
-      {{#link-to 'roulette' classNames='item'}}
-      Roulette
-      {{/link-to}}
+      {{link-to 'Speedy Carousel' 'speedy-carousel' classNames='item'}}
     </div>
 
     {{outlet}}

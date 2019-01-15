@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('roulette');
+  this.route('speedy-carousel');
 });
 
 export default Router;
