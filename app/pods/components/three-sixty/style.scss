@@ -1,0 +1,54 @@
+.container {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  user-select: none;
+
+  display: flex;
+}
+
+.threesixty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 60px;
+  cursor: grab;
+
+  @media (max-width: 900px) {
+    margin: 40px;
+    min-height: 230px;
+  }
+}
+
+.threesixty--dragging {
+  cursor: grabbing;
+}
+
+.threesixty_display {
+  height: 50%;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (max-width: 900px) {
+    height: auto;
+    flex: 1;
+  }
+}
+
+.threesixty_slider {
+  height: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.threesixty_img-cache {
+  opacity: .0001;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="threesixty {{if isDragging 'threesixty--dragging'}}"
+    onmousedown={{action 'handleStart'}}
+    ontouchstart={{action 'handleStart'}}
+    onmousemove={{action 'handleMove'}}
+    ontouchmove={{action 'handleMove'}}
+  >
+    <div class="threesixty_display" style={{html-safe (concat 'background-image: url("' currentImage.large '")')}}></div>
+
+    <div class="threesixty_slider">
+      {{route-pack/modal-product-detail/three-sixty/input-slider
+        value=(readonly sliderRotation)
+        isDragging=(readonly isDragging)
+      }}
+    </div>
+
+    <div class="threesixty_img-cache">
+      {{#each cachedImages as |image|}}
+        <img src={{image.large}}>
+      {{/each}}
+    </div>
+  </div>
+
+</div>
