@@ -1,3 +1,8 @@
 @import 'variables/sizes.css';
 @import 'variables/palette.css';
+@import 'variables/typography.css';
 @import 'pod-styles.css';
+
+body {
+  font-family: $montserrat;
+}
