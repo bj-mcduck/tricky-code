@@ -1,0 +1,12 @@
+<div class="wrapper">
+  {{#if (not (and (gte value 1) (lte value 9)) )}}
+    <div class="wrapper_location">{{placeholder}}</div>
+  {{/if}}
+
+  <input 
+    class="input" 
+    type="number" 
+    value={{value}}
+    oninput={{action 'handleOnChange'}}
+  >
+</div>

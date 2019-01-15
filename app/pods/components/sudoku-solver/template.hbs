@@ -1,0 +1,18 @@
+<div class="sudoku">
+  {{#each (array 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i') as |letter|}}
+    {{#each (array '1' '2' '3' '4' '5' '6' '7' '8' '9') as |number|}}
+      {{sudoku-solver/input 
+        placeholder=(concat letter number)
+        value=(get this (concat letter number)) 
+        onChange=(action (mut (get this (concat letter number))))
+      }}
+    {{/each}}
+  {{/each}}
+
+</div>
+
+'a1: {{a1}}'
+
+<div class="solve" {{action 'onSolve'}}>
+  Solve
+</div>
