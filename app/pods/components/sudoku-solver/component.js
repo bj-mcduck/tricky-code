@@ -78,33 +78,33 @@ export default Component.extend({
 
   getBlock(position) {
     const [alpha, numberString] = position.split('');
-    const num = Number(numberString);
-    const keys = [];
-    if(alpha == 'a' || alpha == 'b' || alpha == 'c') {
-      keys.push('a', 'b', 'c');
-    } else if(alpha == 'd' || alpha == 'e' || alpha == 'f') {
-      keys.push('d', 'e', 'f');
+
+    return this._gridRowsForY(alpha)
+      .reduce((acc, letter) => {
+        this._gridColumnsForX(Number(numberString))
+          .forEach(num => acc.push(this._formatKeyValue(`${letter}${num}`)));
+        return acc;
+      }, []);
+  },
+
+  _gridColumnsForX(x) {
+   if(x <= 3) {
+      return [1, 2, 3];
+    } else if(x >= 7) {
+      return [7, 8, 9];
     } else {
-      keys.push('g', 'h', 'i');
-    }
+      return [4, 5, 6];
+    } 
+  },
 
-    const numbers = [];
-    if(num <= 3) {
-      numbers.push(1,2,3);
-    } else if(num >= 7) {
-      numbers.push(7,8,9);
+  _gridRowsForY(y) {
+    if(y == 'a' || y == 'b' || y == 'c') {
+      return ['a', 'b', 'c'];
+    } else if(y == 'd' || y == 'e' || y == 'f') {
+      return ['d', 'e', 'f'];
     } else {
-      numbers.push(4,5,6);
+      return ['g', 'h', 'i'];
     }
-
-    return keys.reduce((acc, key) => {
-      numbers
-        .forEach(n => 
-          acc.push(this._formatKeyValue(`${key}${n}`))
-        );
-
-      return acc;
-    }, []);
   },
 
   actions: {
